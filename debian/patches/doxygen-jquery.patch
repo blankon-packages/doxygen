@@ -1,0 +1,12 @@
+Index: b/src/htmlgen.cpp
+===================================================================
+--- a/src/htmlgen.cpp
++++ b/src/htmlgen.cpp
+@@ -732,6 +732,7 @@ void HtmlGenerator::init()
+     mgr.copyResource("svgpan.js",dname);
+   }
+ 
++  if (Config_getBool("GENERATE_TREEVIEW") || Config_getBool("SEARCHENGINE"))
+   {
+     QFile f(dname+"/dynsections.js");
+     if (f.open(IO_WriteOnly))
