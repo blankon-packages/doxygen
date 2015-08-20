@@ -1,15 +1,13 @@
 Source: doxygen
 Section: devel
 Priority: optional
-Maintainer: BlankOn Developers <blankon-dev@googlegroups.com>
-XSBC-Original-Maintainer: Matthias Klose <doko@debian.org>
+Maintainer: Matthias Klose <doko@debian.org>
 Uploaders: Helmut Grohne <helmut@subdivi.de>
 Build-Depends: debhelper (>= 5),
   g++ (>= 4:5.2),
   libqt4-dev,
   flex, bison (>= 1.875a),
   python3,
-  libsqlite3-dev,
   libxapian-dev (>= 1.2.21-1.2),
   tmake,
   yui-compressor,

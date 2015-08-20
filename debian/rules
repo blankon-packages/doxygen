@@ -31,7 +31,8 @@ CONFIGUREFLAGS+=--dot /usr/bin/dot
 CONFIGUREFLAGS+=--install /usr/bin/install
 CONFIGUREFLAGS+=--python python3
 CONFIGUREFLAGS+=--with-doxysearch
-CONFIGUREFLAGS+=--with-sqlite3
+# still experimental according to upstream
+#CONFIGUREFLAGS+=--with-sqlite3
 ifneq (,$(filter $(DEB_HOST_ARCH),$(clang_archs)))
   CONFIGUREFLAGS+=--with-libclang
 endif
