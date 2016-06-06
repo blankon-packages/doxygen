@@ -2,7 +2,7 @@ Index: b/src/htmlgen.cpp
 ===================================================================
 --- a/src/htmlgen.cpp
 +++ b/src/htmlgen.cpp
-@@ -732,6 +732,7 @@ void HtmlGenerator::init()
+@@ -728,6 +728,7 @@ void HtmlGenerator::init()
      mgr.copyResource("svgpan.js",dname);
    }
  

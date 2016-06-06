@@ -1,12 +1,11 @@
 manpages.diff
 dot-config.diff
 #doxygen_direct_dot_run.diff
-#qt4.diff
 #gcc-g.diff
 doxygen-jquery.patch
 #dot_num_threads.diff
-system_tmake.patch
-sqlite3-configure.diff
-issue742427.diff
+#sqlite3-configure.diff
 no-timestamps.diff
-default-no-timestamp.diff
+no-rpath.diff
+issue759241.diff
+pyversion.diff

@@ -1,0 +1,13 @@
+Index: b/cmake/FindLibClang.cmake
+===================================================================
+--- a/cmake/FindLibClang.cmake
++++ b/cmake/FindLibClang.cmake
+@@ -38,7 +38,7 @@ if (NOT CLANG_LIBS)
+   if (NOT EXISTS ${CLANG_CLANG_LIB_HACK_CMAKECACHE_DOT_TEXT_BULLSHIT})
+     find_library(CLANG_LIBS NAMES clang libclang)
+     if (NOT EXISTS ${CLANG_LIBS})
+-      set (CLANG_LIBS "-L${CLANG_LIBDIR}" "-lclang" "-Wl,-rpath,${CLANG_LIBDIR}")
++      set (CLANG_LIBS "-L${CLANG_LIBDIR}" "-lclang")
+     endif ()
+   else ()
+     set(CLANG_LIBS "${CLANG_LIB_HACK_CMAKECACHE_DOT_TEXT_BULLSHIT}")

@@ -3,17 +3,16 @@ Section: devel
 Priority: optional
 Maintainer: Matthias Klose <doko@debian.org>
 Uploaders: Helmut Grohne <helmut@subdivi.de>
-Build-Depends: debhelper (>= 5),
-  g++ (>= 4:5.2),
-  libqt4-dev,
+Build-Depends: debhelper (>= 9.20141010),
+  dpkg-dev (>= 1.17.14),
+  qtbase5-dev <!stage1>,
   flex, bison (>= 1.875a),
   python3,
   libxapian-dev (>= 1.2.21-1.2),
-  tmake,
+  cmake,
   yui-compressor,
   llvm-dev,
-  libclang-dev,
-  libclang-3.5-dev
+  libclang-dev
 Build-Depends-Indep: texlive-fonts-recommended,
   texlive-generic-recommended,
   texlive-latex-extra,

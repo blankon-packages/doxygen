@@ -4,7 +4,7 @@ Index: b/src/config.xml
 ===================================================================
 --- a/src/config.xml
 +++ b/src/config.xml
-@@ -3093,7 +3093,7 @@ to be found in the default search path.
+@@ -3145,7 +3145,7 @@ to be found in the default search path.
  ]]>
        </docs>
      </option>
@@ -13,7 +13,7 @@ Index: b/src/config.xml
        <docs>
  <![CDATA[
   If you set the \c HAVE_DOT tag to \c YES then doxygen will assume the \c dot tool is
-@@ -3276,8 +3276,21 @@ to be found in the default search path.
+@@ -3334,8 +3334,21 @@ to be found in the default search path.
  ]]>
        </docs>
        <value name='png'/>
@@ -33,5 +33,5 @@ Index: b/src/config.xml
 +      <value name='gif:gd'/>
 +      <value name='gif:gd:gd'/>
        <value name='svg'/>
-     </option>
-     <option type='bool' id='INTERACTIVE_SVG' defval='0' depends='HAVE_DOT'>
+       <value name='png:gd'/>
+       <value name='png:gd:gd'/>

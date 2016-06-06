@@ -1,14 +1,40 @@
-doxygen (1.8.9.1-5blankon2) tambora; urgency=medium
+doxygen (1.8.11-1blankon1) tambora; urgency=medium
 
   * Rebuild 
 
- -- mhy <dotovr@mhy>  Sun, 20 Dec 2015 23:03:01 +0700
+ -- dotovr <dotovr@preko>  Mon, 06 Jun 2016 22:45:54 +0700
 
-doxygen (1.8.9.1-5blankon1) tambora; urgency=medium
+doxygen (1.8.11-1) unstable; urgency=medium
 
-  * Rebuild 
+  * Upload to unstable.
 
- -- Mahyuddin <yudi.al@gmail.com>  Fri, 21 Aug 2015 06:38:43 +0700
+ -- Matthias Klose <doko@debian.org>  Sun, 07 Feb 2016 17:53:44 +0100
+
+doxygen (1.8.11-1~exp2) experimental; urgency=medium
+
+  * Revert an upstream change which lets to file names with whitespace,
+    exceeding 256 characters.
+    See https://bugzilla.gnome.org/show_bug.cgi?id=759241.
+  * Fix build with unreleased python versions.
+
+ -- Matthias Klose <doko@debian.org>  Fri, 15 Jan 2016 14:43:43 +0100
+
+doxygen (1.8.11-1~exp1) experimental; urgency=medium
+
+  * doxygen 1.8.11 release.
+  * Build using cmake, Qt5.
+  * Fix some lintian warnings.
+
+ -- Matthias Klose <doko@debian.org>  Fri, 01 Jan 2016 20:13:39 +0100
+
+doxygen (1.8.9.1-6) unstable; urgency=medium
+
+  * Only depend on unversioned libclang. (Closes: #803646)
+  * Add build profile annotations to Build-Depends. (Closes: #738263)
+  * Build doc/language.doc from source. (Closes: #794758)
+  * Clean more generated files. Fix twice-FTBFS. (Closes: #794745)
+
+ -- Helmut Grohne <helmut@subdivi.de>  Tue, 01 Dec 2015 00:00:54 +0100
 
 doxygen (1.8.9.1-5) unstable; urgency=medium
 
@@ -38,7 +64,7 @@ doxygen (1.8.9.1-2) experimental; urgency=medium
 
   * Removed \backmatter in case of COMPACT_LATEX. Issue #742427.
 
- -- Matthias Klose <doko@carbon>  Mon, 09 Mar 2015 20:17:33 +0100
+ -- Matthias Klose <doko@debian.org>  Mon, 09 Mar 2015 20:17:33 +0100
 
 doxygen (1.8.9.1-1) experimental; urgency=medium
 
