@@ -9,3 +9,4 @@ no-timestamps.diff
 no-rpath.diff
 issue759241.diff
 pyversion.diff
+timezone-independent-timestamps.diff

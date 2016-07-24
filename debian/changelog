@@ -1,8 +1,22 @@
-doxygen (1.8.11-1blankon1) tambora; urgency=medium
+doxygen (1.8.11-3blankon1) tambora; urgency=medium
 
   * Rebuild 
 
- -- dotovr <dotovr@preko>  Mon, 06 Jun 2016 22:45:54 +0700
+ -- dotovr <dotovr@preko>  Sun, 24 Jul 2016 19:37:12 +0700
+
+doxygen (1.8.11-3) unstable; urgency=medium
+
+  * Applied upstream commit 9a2c7bbfb0c53b4532db7280e6804c7ce76d70a3:
+    Use UTC timezone when displaying QDateTimes parsed from SOURCE_DATE_EPOCH
+    Closes: #792201
+
+ -- Matthias Klose <doko@debian.org>  Fri, 24 Jun 2016 15:57:26 +0200
+
+doxygen (1.8.11-2) unstable; urgency=medium
+
+  * Fix python version number extraction for python release candidate builds.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 15 Jun 2016 08:44:59 +0200
 
 doxygen (1.8.11-1) unstable; urgency=medium
 

@@ -1,0 +1,59 @@
+Description: Use UTC timezone when displaying QDateTimes parsed from SOURCE_DATE_EPOCH
+Author: Ximin Luo <infinity0@pwned.gg>
+Applied-Upstream: https://github.com/doxygen/doxygen/commit/9a2c7bbfb0c53b4532db7280e6804c7ce76d70a3
+Bug: https://bugzilla.gnome.org/show_bug.cgi?id=751984
+Bug-Debian: https://bugs.debian.org/792201
+
+--- a/qtools/qdatetime.cpp
++++ b/qtools/qdatetime.cpp
+@@ -1158,6 +1158,29 @@
+ 
+ 
+ /*!
++  Sets the UTC date and time given the number of seconds that have passed
++  since 00:00:00 on January 1, 1970, Coordinated Universal Time (UTC).
++
++  Note that Microsoft Windows supports only a limited range of values for
++  \a secsSince1Jan1970UTC.
++*/
++
++void QDateTime::setTimeUtc_t( uint secsSince1Jan1970UTC )
++{
++    time_t tmp = (time_t) secsSince1Jan1970UTC;
++    tm *tM = gmtime( &tmp );
++    if ( !tM ) {
++	    d.jd = QDate::greg2jul( 1970, 1, 1 );
++	    t.ds = 0;
++	    return;
++    }
++    d.jd = QDate::greg2jul( tM->tm_year + 1900, tM->tm_mon + 1, tM->tm_mday );
++    t.ds = MSECS_PER_HOUR*tM->tm_hour + MSECS_PER_MIN*tM->tm_min +
++	    1000*tM->tm_sec;
++}
++
++
++/*!
+   Returns the datetime as a string.
+ 
+   The string format is "Sat May 20 03:40:13 1998".
+--- a/qtools/qdatetime.h
++++ b/qtools/qdatetime.h
+@@ -173,6 +173,7 @@
+     void   setDate( const QDate &date ) { d=date; }
+     void   setTime( const QTime &time ) { t=time; }
+     void   setTime_t( uint secsSince1Jan1970UTC );
++    void   setTimeUtc_t( uint secsSince1Jan1970UTC );
+ 
+     QString toString()	const;
+ 
+--- a/src/util.cpp
++++ b/src/util.cpp
+@@ -2497,7 +2497,7 @@
+     }
+     else // all ok, replace current time with epoch value
+     {
+-      current.setTime_t((ulong)epoch); // TODO: add support for 64bit epoch value
++      current.setTimeUtc_t((ulong)epoch); // TODO: add support for 64bit epoch value
+     }
+   }
+   return theTranslator->trDateTime(current.date().year(),
